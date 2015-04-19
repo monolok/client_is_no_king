@@ -1,4 +1,4 @@
-Serving at: 
+Serving at: business_casual.meteor.com
 
 Where should I put my files?
 The example apps in meteor are very simple, and don’t provide much insight. Here’s my current thinking on the best way to do it: (any suggestions/improvements are very welcome!)
