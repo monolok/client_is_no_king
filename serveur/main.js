@@ -1,9 +1,12 @@
+console.log("App starting...");
+
 //meteor add wylio:mandrill
 if (Meteor.isServer) {
+console.log("Mail config...");  
 Meteor.startup(function() {
     return Meteor.Mandrill.config({
         username: USERNAME_MAIL,
-        key: KEY_MAIL
+        key: KEY_MAIL 
     });
 });
 
@@ -29,3 +32,4 @@ Meteor.methods({
 	}
   }
 });
+
