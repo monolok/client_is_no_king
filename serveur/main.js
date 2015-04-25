@@ -5,8 +5,8 @@ if (Meteor.isServer) {
 console.log("Mail config...");  
 Meteor.startup(function() {
     return Meteor.Mandrill.config({
-        username: USERNAME_MAIL,
-        key: KEY_MAIL 
+        username: Meteor.settings.username_mail,
+        key: Meteor.settings.key_mail
     });
 });
 
