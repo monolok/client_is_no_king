@@ -9,4 +9,6 @@ autopublish
 insecure
 iron:router
 email
-wylio:mandrill
+bootstrap
+accounts-password
+accounts-ui
