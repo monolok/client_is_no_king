@@ -18,6 +18,5 @@ Router.route('/', function() {
 	this.render('Index');
 });
 
-Router.route('/about');
-Router.route('/blog');
-Router.route('/contact');
+// Router.route('/blog');
+// Router.route('/contact');
