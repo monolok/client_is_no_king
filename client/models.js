@@ -2,7 +2,7 @@
 * Models
 */
 
-//Messages = new Meteor.Collection('messages');
+Posts = new Meteor.Collection('posts');
 
 /**
 * Routes
@@ -15,8 +15,7 @@ Router.configure({
 });
 
 Router.route('/', function() {
-	this.render('Index');
+	this.render('index');
 });
 
-// Router.route('/blog');
-// Router.route('/contact');
+// Router.route('/blog'); only work if template is name Blog with B caps

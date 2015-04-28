@@ -6,17 +6,29 @@
 <!-- DRY layout -->
  <div class="container_bis">
   <header>
-    <h1>Todo-Todo (0)</h1>
-    {{> loginButtons}}
-    <form class="new-task">
-      <input type="text" name="text" placeholder="Type to add new tasks" />
-    </form>
+    <div class="title">
+      <h1>Client ≠ King</h1>
+    </div>
+    <div class="features">
+      <ul class="tabs">
+        <li>{{> loginButtons}}</li>
+        <li>New Com</li>
+        <li>Best Com</li>
+        <li>Worst Com</li>
+        <li>Randome Com</li>
+      </ul>
+    </div>
+    <div class="form">
+      <form>
+        <textarea id="new-post" class="form-control" placeholder="Write your story and press ENTER" rows="3"></textarea>
+      </form>
+    </div>
   </header>
-<!-- Yielding templates -->  
+  <!-- Yielding templates -->  
   {{>yield}}
-</div>
 
-<p style="color: white; text-align: center;">More</p>
+  <p class="more">More</p>
+</div>
 
 <footer>
     <div class="container_bis">

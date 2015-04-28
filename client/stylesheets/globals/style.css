@@ -5,42 +5,38 @@
  */
 
 body {
-    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('/img/bg.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-
-      padding: 0;
-      margin: 0;
-
-      font-size: 14px;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
 }
 
 footer p {
     margin: 0;
     padding: 50px 0;
+    color: white;
 }
 
 .container_bis {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
+/*  background: white;*/
+  background: url('/img/bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;  
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
   padding: 20px 15px 15px 15px;
-  position: relative;
 }
 
 #login-buttons {
@@ -48,37 +44,12 @@ header {
 }
 
 h1 {
+  color: white;
   font-size: 1.5em;
   margin: 0;
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
-}
-
-form {
-  margin-top: 10px;
-  margin-bottom: -10px;
-  position: relative;
-}
-
-.new-task input {
-  box-sizing: border-box;
-  padding: 10px 0;
-  background: transparent;
-  border: none;
-  width: 100%;
-  padding-right: 80px;
-  font-size: 1em;
-}
-
-.new-task input:focus{
-  outline: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  background: white;
 }
 
 .delete {
@@ -94,32 +65,66 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
 }
 
-li .text {
+.text {
   margin-left: 10px;
 }
 
-li.checked {
+.checked {
   color: #888;
 }
 
-li.checked .text {
+.checked .text {
   text-decoration: line-through;
 }
 
-li.private {
+.private {
   background: #eee;
-  border-color: #ddd;
 }
 
-header .hide-completed {
+.hide-completed {
   float: right;
 }
 
 .toggle-private {
   margin-left: 5px;
+}
+
+.more {
+  text-align: center;
+  color: white;
+}
+
+.space {
+  padding-top: 5px;
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+.features {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.form {
+  padding-top: 50px;
+}
+
+.tabs {
+  display: inline;
+  color: white;
+}
+
+.tabs li {
+  display: inherit;
+}
+
+#login-buttons {
+  display: inline-block;
 }
 
 @media (max-width: 600px) {
@@ -133,6 +138,6 @@ header .hide-completed {
   }
 
   .new-task input {
-    padding-bottom: 5px;
+
   }
 }
