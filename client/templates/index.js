@@ -2,14 +2,26 @@ if (Meteor.isClient) {
 	Template.index.helpers({
 
 		posts: function () {
-			return Posts.find({}, {sort: {createdAt: -1}});
+			return Posts.find({}, {sort: {voteResult: -1}});
 		}
 
 	});
 
 	Template.index.events({
+
 		"click .delete": function() {
-			Meteor.call("deletePost", this._id)
+			Meteor.call("deletePost", this._id);
+		},
+
+		"click .vote-up": function() {
+			Meteor.call("voteUp", this._id);
+			Meteor.call("voteResult", this._id);
+		},
+
+		"click .vote-down": function() {
+			Meteor.call("voteDown", this._id);
+			Meteor.call("voteResult", this._id);
 		}
+
 	});
 }

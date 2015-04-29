@@ -2,15 +2,24 @@
 	<ul>
 	{{#each posts}}
 		<div class="space">
-			<li class="private"> <!-- class private -->
-
-				<button class="vote-up">
-				</button>
-				<button class="vote-down">
-				</button>
-				<span class="text"><strong>Marc</strong> - {{text}}</span>
-				<button class="delete">&times;</button>
-
+			<li class="private row"> <!-- class private -->
+				<div class="col-xs-2">
+					<i class="fa fa-bullhorn fa-2x">{{voteResult}}</i>
+					<div>
+						<button class="vote-up">
+							<i class="fa fa-arrow-circle-up"></i>
+						</button>
+						<button class="vote-down">
+							<i class="fa fa-arrow-circle-down"></i>
+						</button>				
+					</div>
+				</div>
+				<div class="col-xs-8">
+					<span class="text"><strong>Marc</strong> - {{text}}</span>
+				</div>
+				<div class="col-xs-offset-2">
+					<button class="delete">&times;</button>		
+				</div>
 			</li>
 		</div>	
     {{/each}}		
