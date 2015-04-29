@@ -1,10 +1,4 @@
 /**
-* Models
-*/
-
-Posts = new Meteor.Collection('posts');
-
-/**
 * Routes
 */
 
