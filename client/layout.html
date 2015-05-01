@@ -18,11 +18,13 @@
         <li>Randome Com</li>
       </ul>
     </div>
-    <div class="form">
-      <form>
-        <textarea id="new-post" class="form-control" placeholder="Write your story and press ENTER" rows="3"></textarea>
-      </form>
-    </div>
+    {{#if currentUser}}
+      <div class="form">
+        <form>
+          <textarea id="new-post" class="form-control" placeholder="Write your story and press ENTER" rows="3"></textarea>
+        </form>
+      </div>
+    {{/if}}
   </header>
   <!-- Yielding templates -->  
   {{>yield}}

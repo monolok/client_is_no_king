@@ -7,9 +7,10 @@ Posts = new Meteor.Collection('posts');
 // In your server code: define a method that the client can call
 Meteor.methods({
 
-	addPost: function(text) {
+	addPost: function(text, email) {
 		Posts.insert({
 			text: text,
+			email: email,
 			voteUp: 0,
 			voteDown: 0,
 			voteResult: 0,
