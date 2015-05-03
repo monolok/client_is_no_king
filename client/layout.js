@@ -13,8 +13,6 @@ if (Meteor.isClient) {
     		}
 		}
 
-
-
 	});
 
 

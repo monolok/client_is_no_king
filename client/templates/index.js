@@ -2,7 +2,7 @@ if (Meteor.isClient) {
 	Template.index.helpers({
 
 		posts: function () {
-			return Posts.find({}, {sort: {voteResult: -1}});
+			return Posts.find({}, {sort: {voteResult: -1}, limit: 8});
 		}
 
 	});
