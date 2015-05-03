@@ -26,11 +26,32 @@
       </div>
     {{/if}}
   </header>
+
   <!-- Yielding templates -->  
   {{>yield}}
-
-  <p class="more">More</p>
   
+  <!-- Pagination -->  
+  <div class="text-center">
+    <ul class="pagination_bis">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="active_bis"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </div>    
+
+  <!-- Footer -->  
   <footer>
       <div class="container_bis">
         <div class="text-center">

@@ -36,5 +36,7 @@ Meteor.methods({
 		Posts.update(postId, {$set: {voteResult: result} });
 	}
 
+	
+
 });
 

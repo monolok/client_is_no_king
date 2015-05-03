@@ -128,6 +128,22 @@ li {
   display: inline-block;
 }
 
+.pagination_bis {
+  display: inline-block;
+  padding-left: 0px;
+  margin: 20px 0px;
+  border-radius: 4px;
+  background-color: aliceblue;
+}
+
+.pagination_bis li {
+  display: inline;
+}
+
+.active_bis a{
+  color: red;
+}
+
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;
