@@ -1,6 +1,6 @@
-/**
-* Routes
-*/
+/********
+* Routes*
+*********/
 
 Router.configure({
     loadingTemplate: 'loading',

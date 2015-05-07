@@ -3,6 +3,11 @@ if (Meteor.isClient) {
 
 		posts: function () {
 			return Posts.find({}, {sort: {voteResult: -1}}); //, limit: 8
+			//return Pagination.collection(Posts.find({}).fetch());
+		},
+
+		pagination: function() {
+	    	//return Pagination.links('/browse', Posts.find({}).count(), {currentPage: Session.get('page'), perPage: 8});
 		}
 
 	});
@@ -24,4 +29,6 @@ if (Meteor.isClient) {
 		}
 
 	});
+
+
 }
