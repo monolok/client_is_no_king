@@ -1,1 +1,0 @@
-Pages = new Meteor.Pagination('posts_pagination')

@@ -35,8 +35,11 @@ Meteor.methods({
 		var result = post.voteUp + post.voteDown;
 		Posts.update(postId, {$set: {voteResult: result} });
 	}
-
 	
 
 });
 
+// Publish code so that it can be subscribed on the client side
+Meteor.publish("posts", function () {
+	return Posts.find({});  //, limit: 8
+});
