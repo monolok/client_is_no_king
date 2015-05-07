@@ -12,6 +12,8 @@ Router.route('/', function() {
 	this.render('index');
 });
 
+
+
 // Router.route('/blog'); only work if template is name Blog with B caps
 
 // Router.route('/items/:_id', function () {
