@@ -43,3 +43,12 @@ Meteor.methods({
 Meteor.publish("posts", function () {
 	return Posts.find({});  //, limit: 8
 });
+
+// Meteor.publish("posts_recent", function (current_page) {
+// 	var activePage = parseInt(current_page)
+// 	//figure out limit with activePage
+// 	return Posts.find({}, {limit: limit});
+// });
+
+
+

@@ -5,18 +5,22 @@ if (Meteor.isClient) {
 	Template.index.helpers({
 
 		posts: function () {
-			return Posts.find({}, {sort: {voteResult: -1}});
-			//return Pagination.collection(Posts.find({}).fetch());
-		},
+			if (Session.get("current_page") == undefined) {
+				limit = 12;
+				skip = 0;
+			} else {
+				var multi = parseInt(Session.get("current_page"))
+				limit = 12;
+				skip = 12*multi;
+			}			
 
-		// pagination: function() {
-	 //    	//return Pagination.links('/browse', Posts.find({}).count(), {currentPage: Session.get('page'), perPage: 8});
-		// }
+			return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip});
+		},
 
 		number_of_pages: function () {
 			var page_count = (Posts.find().count())/12;
 			var pages = new Array();
-			var i = 0;
+			var i = 1;
 			while (i < page_count ) {
 				pages.push(i);
 				i++;
@@ -41,6 +45,8 @@ if (Meteor.isClient) {
 			Meteor.call("voteDown", this._id);
 			Meteor.call("voteResult", this._id);
 		}
+
+		
 
 	});
 
