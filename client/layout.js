@@ -11,7 +11,11 @@ if (Meteor.isClient) {
     			document.getElementById('new-post').value = "";
     			return false;
     		}
-		}
+		}//,
+
+		// 'click a#random': function() {
+
+		// }
 
 	});
 

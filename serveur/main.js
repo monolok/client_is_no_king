@@ -14,6 +14,7 @@ Meteor.methods({
 			voteUp: 0,
 			voteDown: 0,
 			voteResult: 0,
+			random: Math.random(),
 			createdAt: new Date()
 		});
 	},

@@ -11,6 +11,9 @@ Meteor.myFunctions = {
 		return pages
 	}
 
+
+
+
 }
 
 //Meteor.myFunctions.number_of_pages()

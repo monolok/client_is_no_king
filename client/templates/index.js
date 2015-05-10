@@ -12,8 +12,30 @@ if (Meteor.isClient) {
 				var multi = parseInt(Session.get("current_page"))
 				limit = 12;
 				skip = 12*multi;
-			}			
-			return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip});
+			}
+
+			if (Session.get("order") == "worst") {
+				return Posts.find({}, {sort: {voteResult: 1}, limit: limit, skip: skip})
+
+			}else if (Session.get("order") == "rand") {
+				random = Math.random();
+				result = Posts.find({"random": {"$gt": random}}, {limit: 1})
+				if (result.fetch().length == 0) {
+					return Posts.find({"random": {"$lt": random}}, {limit: 1})
+				}else{
+					return result
+				};
+
+			}else if(Session.get("order") == "best"){
+				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
+
+			}else if(Session.get("order") == "newest") {
+				return Posts.find({}, {sort: {createdAt: -1}, limit: limit, skip: skip})
+
+			}else{
+				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
+			};			
+
 		},
 
 		number_of_pages: function () {
