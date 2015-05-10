@@ -41,3 +41,10 @@ Router.route('/:page', function () {
   	}
   });
 });
+
+// Router.route('/worst', function () {
+//     this.render('index', {data: function(){
+//       console.log("worst");
+//     }
+//   });
+// });
