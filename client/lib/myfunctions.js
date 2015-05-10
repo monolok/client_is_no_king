@@ -9,9 +9,18 @@ Meteor.myFunctions = {
 			i++;
 		}
 		return pages
+	},
+
+	random_post: function () {
+		random = Math.random();
+		result = Posts.find({"random": {"$gt": random}}, {limit: 1})
+
+		if (result.fetch().length == 0) {
+			return Posts.find({"random": {"$lt": random}}, {limit: 1})
+		}else{
+			return result
+		}
 	}
-
-
 
 
 }

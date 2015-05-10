@@ -18,13 +18,16 @@ if (Meteor.isClient) {
 				return Posts.find({}, {sort: {voteResult: 1}, limit: limit, skip: skip})
 
 			}else if (Session.get("order") == "rand") {
-				random = Math.random();
-				result = Posts.find({"random": {"$gt": random}}, {limit: 1})
-				if (result.fetch().length == 0) {
-					return Posts.find({"random": {"$lt": random}}, {limit: 1})
-				}else{
-					return result
-				};
+				return Meteor.myFunctions.random_post()
+				// random = Math.random();
+				// result = Posts.find({"random": {"$gt": random}}, {limit: 1})
+				// if (result.fetch().length == 0) {
+				// 	//console.log(result.fetch())
+				// 	return Posts.find({"random": {"$lt": random}}, {limit: 1})
+				// }else{
+				// 	//console.log(result.fetch())
+				// 	return result
+				// };
 
 			}else if(Session.get("order") == "best"){
 				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
