@@ -12,13 +12,17 @@ Meteor.myFunctions = {
 	},
 
 	random_post: function () {
+		//console.log("trigger rand");
 		random = Math.random();
-		result = Posts.find({"random": {"$gt": random}}, {limit: 1})
+		result = Posts.findOne({"random": {"$gt": random}});
+		result_array = [];
 
-		if (result.fetch().length == 0) {
-			return Posts.find({"random": {"$lt": random}}, {limit: 1})
+		if (result == undefined) {
+			result_array.push(Posts.findOne({"random": {"$lt": random}}));
+			return result_array
 		}else{
-			return result
+			result_array.push(Posts.findOne({"random": {"$gt": random}}));
+			return result_array
 		}
 	}
 

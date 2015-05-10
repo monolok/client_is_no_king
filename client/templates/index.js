@@ -86,7 +86,16 @@ if (Meteor.isClient) {
 				return true
 			};
 
-		}
+		},
+
+		user_legit: function () {
+			//this_stuff = this;
+			if (Meteor.userId() == this.user_id) {
+				return true
+			}else{
+				return false
+			}
+		}		
 
 	});
 

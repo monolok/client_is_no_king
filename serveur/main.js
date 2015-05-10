@@ -15,6 +15,7 @@ Meteor.methods({
 			voteDown: 0,
 			voteResult: 0,
 			random: Math.random(),
+			user_id: Meteor.userId(),
 			createdAt: new Date()
 		});
 	},

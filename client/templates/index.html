@@ -18,11 +18,13 @@
 					<span class="text"><strong>{{email}}</strong> - {{text}}</span>
 				</div>
 				<div class="col-xs-offset-2">
+				{{#if user_legit}}
 					<button class="delete">&times;</button>		
+				{{/if}}
 				</div>
 			</li>
 		</div>
-    {{/each}}		
+	{{/each}}		
 	</ul>
 <!-- pagination -->
 	<div class="text-center">
