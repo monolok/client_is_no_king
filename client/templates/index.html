@@ -5,6 +5,7 @@
 			<li class="private row"> <!-- class private -->
 				<div class="col-xs-2">
 					<i class="fa fa-bullhorn fa-2x">{{voteResult}}</i>
+				{{#if user_legit}}
 					<div>
 						<button class="vote-up">
 							<i class="fa fa-arrow-circle-up"></i>
@@ -13,6 +14,7 @@
 							<i class="fa fa-arrow-circle-down"></i>
 						</button>				
 					</div>
+				{{/if}}
 				</div>
 				<div class="col-xs-8">
 					<span class="text"><strong>{{email}}</strong> - {{text}}</span>
