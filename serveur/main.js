@@ -3,7 +3,48 @@ console.log("App starting...");
 * Models
 */
 Posts = new Meteor.Collection('posts');
+/**
+* Validation Schema
+*/
+Schema = {};
 
+Schema.Post = new SimpleSchema({
+	text: {
+		type: String,
+		label: "Text",
+		max: 140
+	},
+
+	email: {
+		type: String
+	},
+
+	voteUp: {
+		type: Number
+	},
+
+	voteDown: {
+		type: Number
+	},
+
+	voteResult: {
+		type: Number
+	},
+
+	random: {
+		type: String
+	},
+
+	user_id: {
+		type: String
+	},
+
+	createdAt: {
+		type: Date
+	}
+});
+
+Posts.attachSchema(Schema.Post);
 // In your server code: define a method that the client can call
 Meteor.methods({
 
@@ -17,7 +58,17 @@ Meteor.methods({
 			random: Math.random(),
 			user_id: Meteor.userId(),
 			createdAt: new Date()
+		}, function(error, result) {
+  //The update will fail, error will be set,
+  //and result will be undefined or false because "copies" is required.
+  //
+  //The list of errors is available on `error.invalidKeys` or by calling Books.simpleSchema().namedContext().invalidKeys()
 		});
+
+		//function(error, result){
+			//console.log(error)
+		//});
+
 	},
 
 	deletePost: function(postId) {
@@ -37,7 +88,6 @@ Meteor.methods({
 		var result = post.voteUp + post.voteDown;
 		Posts.update(postId, {$set: {voteResult: result} });
 	}
-	
 
 });
 

@@ -12,6 +12,7 @@ if (Meteor.isClient) {
 				}else if (Meteor.user().emails != undefined) {
 					var userEmail = Meteor.user().emails[0].address					
 				};
+
     			Meteor.call("addPost", postContent, userEmail);
     			// console.log(postContent);
     			document.getElementById('new-post').value = "";
@@ -27,6 +28,14 @@ if (Meteor.isClient) {
 			//console.log("cl")
 		}
 
+	});
+
+	Template.layout.helpers({
+		error_msg: function () {
+			if (Posts.simpleSchema().namedContext().invalidKeys().length != 0) {
+				return Posts.simpleSchema().namedContext().invalidKeys()[0].type
+			};
+		} 
 	});
 
 
