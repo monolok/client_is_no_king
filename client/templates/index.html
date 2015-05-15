@@ -8,10 +8,18 @@
 				{{#if currentUser}}
 					<div>
 						<button class="vote-up">
-							<i class="fa fa-arrow-circle-up"></i>
+							{{#if user_has_voted_up}}
+								<i>no</i>
+							{{else}}
+								<i class="fa fa-arrow-circle-up"></i>
+							{{/if}}
 						</button>
 						<button class="vote-down">
-							<i class="fa fa-arrow-circle-down"></i>
+							{{#if user_has_voted_down}}
+								<i>no</i>
+							{{else}}
+								<i class="fa fa-arrow-circle-down"></i>
+							{{/if}}
 						</button>				
 					</div>
 				{{/if}}

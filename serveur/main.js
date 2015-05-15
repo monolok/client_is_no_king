@@ -39,7 +39,11 @@ Schema.Post = new SimpleSchema({
 		type: String
 	},
 
-	user_involved: {
+	user_involved_up: {
+		type: [String]
+	},
+
+	user_involved_down: {
 		type: [String]
 	},
 
@@ -61,7 +65,8 @@ Meteor.methods({
 			voteResult: 0,
 			random: Math.random(),
 			user_id: Meteor.userId(),
-			user_involved: [" "],
+			user_involved_up: [" "],
+			user_involved_down: [" "],
 			createdAt: new Date()
 		}, function(error, result) {
   //The update will fail, error will be set,
@@ -94,10 +99,14 @@ Meteor.methods({
 		Posts.update(postId, {$set: {voteResult: result} });
 	},
 
-	user_has_voted: function(postId, user_id) {
+	user_has_voted_up: function(postId, user_id) {
 		//console.log(postId);
 		//console.log(user_id);
-		Posts.update(postId, {$addToSet: {user_involved: user_id}});
+		Posts.update(postId, {$addToSet: {user_involved_up: user_id}});
+	},
+
+	user_has_voted_down: function(postId, user_id) {
+		Posts.update(postId, {$addToSet: {user_involved_down: user_id}});
 	}
 
 });
