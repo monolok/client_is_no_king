@@ -108,11 +108,13 @@ if (Meteor.isClient) {
 		"click .vote-up": function() {
 			Meteor.call("voteUp", this._id);
 			Meteor.call("voteResult", this._id);
+			Meteor.call("user_has_voted", this._id, Meteor.userId())
 		},
 
 		"click .vote-down": function() {
 			Meteor.call("voteDown", this._id);
 			Meteor.call("voteResult", this._id);
+			Meteor.call("user_has_voted", this._id, Meteor.userId())
 		}
 
 	});

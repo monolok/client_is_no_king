@@ -39,6 +39,10 @@ Schema.Post = new SimpleSchema({
 		type: String
 	},
 
+	user_involved: {
+		type: [String]
+	},
+
 	createdAt: {
 		type: Date
 	}
@@ -57,6 +61,7 @@ Meteor.methods({
 			voteResult: 0,
 			random: Math.random(),
 			user_id: Meteor.userId(),
+			user_involved: [" "],
 			createdAt: new Date()
 		}, function(error, result) {
   //The update will fail, error will be set,
@@ -87,6 +92,12 @@ Meteor.methods({
 		var post = Posts.findOne(postId);
 		var result = post.voteUp + post.voteDown;
 		Posts.update(postId, {$set: {voteResult: result} });
+	},
+
+	user_has_voted: function(postId, user_id) {
+		//console.log(postId);
+		//console.log(user_id);
+		Posts.update(postId, {$addToSet: {user_involved: user_id}});
 	}
 
 });
