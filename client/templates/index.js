@@ -127,6 +127,11 @@ if (Meteor.isClient) {
 				Meteor.call("voteUp", this._id);
 				Meteor.call("voteResult", this._id);
 				Meteor.call("user_has_voted_up", this._id, Meteor.userId());
+				if (this.user_involved_down.indexOf(Meteor.userId()) != -1) {
+					//var position = this.user_involved_down.indexOf(Meteor.userId());
+					//this.user_involved_down.splice(0, position);
+					Meteor.call("remove_id_from_array_down", this._id, Meteor.userId());					
+				};				
 			}else{
 				console.log("you have already voted up")
 			};
@@ -139,8 +144,11 @@ if (Meteor.isClient) {
 				Meteor.call("voteDown", this._id);
 				Meteor.call("voteResult", this._id);
 				Meteor.call("user_has_voted_down", this._id, Meteor.userId());
+				if (this.user_involved_up.indexOf(Meteor.userId()) != -1) {
+					Meteor.call("remove_id_from_array_up", this._id, Meteor.userId());					
+				};
 			}else{
-				console.log("you have already voted down")
+				console.log("you have already voted down");
 			};
 		}
 

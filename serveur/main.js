@@ -107,6 +107,14 @@ Meteor.methods({
 
 	user_has_voted_down: function(postId, user_id) {
 		Posts.update(postId, {$addToSet: {user_involved_down: user_id}});
+	},
+
+	remove_id_from_array_up: function(postId, user_id) {
+		Posts.update(postId, {$pull: {user_involved_up: user_id}});
+	},
+
+	remove_id_from_array_down: function(postId, user_id) {
+		Posts.update(postId, {$pull: {user_involved_down: user_id}});
 	}
 
 });
