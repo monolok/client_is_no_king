@@ -111,7 +111,7 @@ if (Meteor.isClient) {
 			}else{
 				return true
 			};
-		}	
+		}
 
 	});
 
