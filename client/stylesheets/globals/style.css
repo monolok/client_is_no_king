@@ -125,6 +125,15 @@ li {
   display: inherit;
 }
 
+.tabs a {
+  color: black;
+  text-decoration: none;
+}
+
+.tabs a:hover {
+  opacity: 0.4;
+}
+
 #login-buttons {
   display: inline-block;
 }
