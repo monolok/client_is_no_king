@@ -19,15 +19,6 @@ if (Meteor.isClient) {
 
 			}else if (Session.get("order") == "rand") {
 				return Meteor.myFunctions.random_post()
-				// random = Math.random();
-				// result = Posts.find({"random": {"$gt": random}}, {limit: 1})
-				// if (result.fetch().length == 0) {
-				// 	//console.log(result.fetch())
-				// 	return Posts.find({"random": {"$lt": random}}, {limit: 1})
-				// }else{
-				// 	//console.log(result.fetch())
-				// 	return result
-				// };
 
 			}else if(Session.get("order") == "best"){
 				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
@@ -35,10 +26,33 @@ if (Meteor.isClient) {
 			}else if(Session.get("order") == "newest") {
 				return Posts.find({}, {sort: {createdAt: -1}, limit: limit, skip: skip})
 
+			}else if(Session.get("order") == "resto") {
+				return Posts.find({category: "Restaurant staff"})
+
+			}else if(Session.get("order") == "hotel") {
+				return Posts.find({category: "Hotel staff"})				
+
+			}else if(Session.get("order") == "store") {
+				return Posts.find({category: "Store staff"})
+
+			}else if(Session.get("order") == "other") {
+				return Posts.find({category: "Other"})
+
 			}else{
 				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
 			};			
 
+		},
+
+		name_of_user: function() {
+			if (this.email.indexOf("@") == -1) {
+				return this.email
+			}else{
+				var mail = this.email
+				var position_end = mail.indexOf("@");
+				var user_name = mail.slice(0, position_end);
+				return user_name
+			}
 		},
 
 		number_of_pages: function () {

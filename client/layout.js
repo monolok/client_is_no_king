@@ -12,8 +12,8 @@ if (Meteor.isClient) {
 				}else if (Meteor.user().emails != undefined) {
 					var userEmail = Meteor.user().emails[0].address					
 				};
-
-    			Meteor.call("addPost", postContent, userEmail);
+				var category = document.getElementById('cat').value;
+    			Meteor.call("addPost", postContent, userEmail, category);
     			// console.log(postContent);
     			document.getElementById('new-post').value = "";
     			return false;

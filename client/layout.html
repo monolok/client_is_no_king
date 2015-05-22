@@ -9,6 +9,7 @@
     <div class="title">
       <h1>Whistly</h1><br>
       <small><em>Blow the whistle and speak out !</em></small>
+      <p class="padding-top">It is time for the service industry staff to review its customers. Not only staff members and businesses should be dealing with reviews but also customers. Cusotmer are not kings and they are not always right !</p>
     </div>
     <div class="features">
       <ul class="tabs">
@@ -28,10 +29,33 @@
       </ul>
       <ul class="error">{{error_msg}}</ul>
     </div>
+    <div class="features">
+      <ul class="tabs">
+        <li>
+          <a href="/posts/resto">Restaurant</a>
+        </li>
+        <li>
+          <a href="/posts/hotel">Hotel</a>
+        </li>
+        <li>
+          <a href="/posts/store">Store</a>
+        </li>
+        <li>
+          <a href="/posts/other">Other</a>
+        </li>
+      </ul>      
+    </div>    
     {{#if currentUser}}
       <div class="form">
+        <select multiple class="form-control" id="cat">
+          <option>Restaurant staff</option>
+          <option>Hotel staff</option>
+          <option>Store staff</option>
+          <option>Other</option>
+        </select>
+
         <form>
-          <textarea id="new-post" class="form-control" placeholder="Write your story and press ENTER" rows="3"></textarea>
+          <textarea id="new-post" class="form-control" placeholder="Pick a category from above, write your story and press ENTER" rows="3"></textarea>
         </form>
       </div>
     {{/if}}

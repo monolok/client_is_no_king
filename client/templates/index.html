@@ -27,12 +27,15 @@
 				{{/if}}
 				</div>
 				<div class="col-xs-8">
-					<span class="text"><strong>{{email}}</strong> - {{text}}</span>
+					<span class="text"><strong>{{category}}</strong> - {{text}}</span>
+					<blockquote class="blockquote-reverse">
+						<footer>{{name_of_user}}</footer>
+					</blockquote>
 				</div>
 				<div class="col-xs-offset-2">
-				{{#if user_legit}}
-					<button class="delete">&times;</button>		
-				{{/if}}
+					{{#if user_legit}}
+						<button class="delete">&times;</button>		
+					{{/if}}
 				</div>
 			</li>
 		</div>

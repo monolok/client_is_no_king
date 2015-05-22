@@ -23,6 +23,10 @@ footer p {
     color: white;
 }
 
+#cat {
+  margin-bottom: 20px;
+}
+
 .container_bis {
   max-width: 800px;
   margin: 0 auto;
@@ -156,6 +160,10 @@ li {
 
 .error {
   color: red;
+}
+
+.padding-top {
+  padding-top: 10px;
 }
 
 @media (max-width: 600px) {

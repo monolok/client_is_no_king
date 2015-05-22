@@ -31,6 +31,10 @@ Schema.Post = new SimpleSchema({
 		type: Number
 	},
 
+	category: {
+		type: String
+	},
+
 	random: {
 		type: String
 	},
@@ -56,13 +60,14 @@ Posts.attachSchema(Schema.Post);
 // In your server code: define a method that the client can call
 Meteor.methods({
 
-	addPost: function(text, email) {
+	addPost: function(text, email, category) {
 		Posts.insert({
 			text: text,
 			email: email,
 			voteUp: 0,
 			voteDown: 0,
 			voteResult: 0,
+			category: category,
 			random: Math.random(),
 			user_id: Meteor.userId(),
 			user_involved_up: [" "],
