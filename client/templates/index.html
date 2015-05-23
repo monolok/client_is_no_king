@@ -4,7 +4,18 @@
 		<div class="space">
 			<li class="private row"> <!-- class private -->
 				<div class="col-xs-2">
-					<i class="fa fa-bullhorn fa-2x">{{voteResult}}</i>
+					{{#if category_restaurant}}
+						<i class="fa fa-cutlery fa-2x"> {{voteResult}}</i>
+					{{/if}}
+					{{#if category_hotel}}
+						<i class="fa fa-bed fa-2x"> {{voteResult}}</i>
+					{{/if}}
+					{{#if category_store}}
+						<i class="fa fa-shopping-cart fa-2x"> {{voteResult}}</i>
+					{{/if}}
+					{{#if category_else}}
+						<i class="fa fa-archive fa-2x"> {{voteResult}}</i>
+					{{/if}}
 				{{#if currentUser}}
 					<div>
 					{{#unless user_legit}}

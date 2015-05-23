@@ -6,7 +6,7 @@
 
 body {
   /*font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;*/
-  background-color: whitesmoke;
+/*  background-color: whitesmoke;*/
   position: absolute;
   top: 0;
   bottom: 0;
@@ -32,7 +32,7 @@ footer p {
   margin: 0 auto;
   min-height: 100%;
 /*  background: white;*/
-  background: url('/img/bg.jpg') no-repeat center center fixed;
+  background: url('/img/bg.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -47,9 +47,10 @@ header {
   display: block;
 }
 
-h1 {
+#title_css {
   font-family: 'Give You Glory', cursive; 
-  color: white;
+  color: #6E3866;
+  font-size: 6em;
   display: inline-block;
 /*  font-size: 1.5em;
   margin: 0;
@@ -85,7 +86,7 @@ li {
 }
 
 .private {
-  background: #eee;
+  background: white;
 }
 
 .hide-completed {
@@ -108,7 +109,9 @@ li {
 
 .title {
   text-align: center;
-  color: white;
+  color: black;
+  padding-bottom: 50px;
+  padding-top: 20px;
 }
 
 .features {
@@ -116,9 +119,9 @@ li {
   text-align: center;
 }
 
-.form {
+/*.form {
   padding-top: 50px;
-}
+}*/
 
 .tabs {
   display: inline;
@@ -162,8 +165,11 @@ li {
   color: red;
 }
 
-.padding-top {
-  padding-top: 10px;
+.what {
+  padding-top: 40px;
+  text-align: center;
+  padding-bottom: 50px;
+  color: #6E3866;
 }
 
 @media (max-width: 600px) {

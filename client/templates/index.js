@@ -125,6 +125,39 @@ if (Meteor.isClient) {
 			}else{
 				return true
 			};
+		},
+
+		category_restaurant: function() {
+			if (this.category == "Restaurant staff") {
+				return true
+			}else{
+				return false
+			};
+		},
+
+		category_hotel: function() {
+			if (this.category == "Hotel staff") {
+				return true
+			}else{
+				return false
+			};
+
+		},
+
+		category_store: function() {
+			if (this.category == "Store staff") {
+				return true
+			}else{
+				return false
+			};
+		},
+
+		category_else: function() {
+			if (this.category == "Other") {
+				return true
+			}else{
+				return false
+			};			
 		}
 
 	});

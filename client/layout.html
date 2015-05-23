@@ -7,9 +7,8 @@
  <div class="container_bis">
   <header>
     <div class="title">
-      <h1>Whistly</h1><br>
+      <h1 id="title_css">Whistly</h1><br>
       <small><em>Blow the whistle and speak out !</em></small>
-      <p class="padding-top">It is time for the service industry staff to review its customers. Not only staff members and businesses should be dealing with reviews but also customers. Cusotmer are not kings and they are not always right !</p>
     </div>
     <div class="features">
       <ul class="tabs">
@@ -32,26 +31,29 @@
     <div class="features">
       <ul class="tabs">
         <li>
-          <a href="/posts/resto">Restaurant</a>
+          <a href="/posts/resto"><i class="fa fa-cutlery"></i> Restaurant</a>
         </li>
         <li>
-          <a href="/posts/hotel">Hotel</a>
+          <a href="/posts/hotel"><i class="fa fa-bed"></i> Hotel</a>
         </li>
         <li>
-          <a href="/posts/store">Store</a>
+          <a href="/posts/store"><i class="fa fa-shopping-cart"></i> Store</a>
         </li>
         <li>
-          <a href="/posts/other">Other</a>
+          <a href="/posts/other"><i class="fa fa-archive"></i> Other</a>
         </li>
       </ul>      
-    </div>    
+    </div>
+    <div class="what">
+      <i class="fa fa-bullhorn fa-3x"></i> Customers can be annoying sometimes, share with us your story !
+    </div>
     {{#if currentUser}}
       <div class="form">
         <select multiple class="form-control" id="cat">
-          <option>Restaurant staff</option>
-          <option>Hotel staff</option>
-          <option>Store staff</option>
-          <option>Other</option>
+          <option>Restaurant staff to customers</option>
+          <option>Hotel staff to customers</option>
+          <option>Store staff to customers</option>
+          <option>Other service staff to customers</option>
         </select>
 
         <form>
@@ -68,7 +70,7 @@
   <footer>
       <div class="container_bis">
         <div class="text-center">
-            <p>Copyright &copy; Whistly 2015</p>
+            <p style="color: black;">Copyright &copy; Whistly 2015</p>
         </div>
       </div>
   </footer>  
