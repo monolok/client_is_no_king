@@ -128,7 +128,7 @@ if (Meteor.isClient) {
 		},
 
 		category_restaurant: function() {
-			if (this.category == "Restaurant staff") {
+			if (this.category == "Restaurant staff to customers") {
 				return true
 			}else{
 				return false
@@ -136,7 +136,7 @@ if (Meteor.isClient) {
 		},
 
 		category_hotel: function() {
-			if (this.category == "Hotel staff") {
+			if (this.category == "Hotel staff to customers") {
 				return true
 			}else{
 				return false
@@ -145,7 +145,7 @@ if (Meteor.isClient) {
 		},
 
 		category_store: function() {
-			if (this.category == "Store staff") {
+			if (this.category == "Store staff to customers") {
 				return true
 			}else{
 				return false
@@ -153,7 +153,7 @@ if (Meteor.isClient) {
 		},
 
 		category_else: function() {
-			if (this.category == "Other") {
+			if (this.category == "Other service staff to customers") {
 				return true
 			}else{
 				return false
