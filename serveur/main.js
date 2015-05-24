@@ -12,7 +12,7 @@ Schema.Post = new SimpleSchema({
 	text: {
 		type: String,
 		label: "Text",
-		max: 140
+		max: 240
 	},
 
 	email: {
