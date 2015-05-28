@@ -27,16 +27,16 @@ if (Meteor.isClient) {
 				return Posts.find({}, {sort: {createdAt: -1}, limit: limit, skip: skip})
 
 			}else if(Session.get("order") == "resto") {
-				return Posts.find({category: "Restaurant staff to customers"})
+				return Posts.find({category: "Restaurant staff to people"})
 
 			}else if(Session.get("order") == "hotel") {
-				return Posts.find({category: "Hotel staff to customers"})				
+				return Posts.find({category: "Hotel staff to people"})				
 
 			}else if(Session.get("order") == "store") {
-				return Posts.find({category: "Store staff to customers"})
+				return Posts.find({category: "Store staff to people"})
 
 			}else if(Session.get("order") == "other") {
-				return Posts.find({category: "Other service staff to customers"})
+				return Posts.find({category: "Other service staff to people"})
 
 			}else{
 				return Posts.find({}, {sort: {voteResult: -1}, limit: limit, skip: skip})
